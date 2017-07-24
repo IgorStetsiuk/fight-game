@@ -19,8 +19,8 @@ class Fighter implements IFighter {
         this._health = health;
     }
 
-    public hit(enemy: Fighter, point: number): void {
-        enemy.setDamage(point * enemy._power);
+    public hit(enemy: IFighter, point: number): void {
+        enemy.setDamage(point * this._power);
     }
 
     public  setDamage(damage: number): void {
@@ -41,13 +41,13 @@ class Fighter implements IFighter {
 }
 
 class ImprovedFighter extends Fighter {
-    doubleHit(enemy: Fighter, point: number) {
+    doubleHit(enemy: IFighter, point: number) {
         super.hit(enemy, point * 2);
     }
 
 }
 
-let fighter = new Fighter('Batman', 10, 300);
+let fighter = new Fighter('Batman', 10, 700);
 let improvedFighter = new ImprovedFighter('Superman', 10, 300);
 
 
